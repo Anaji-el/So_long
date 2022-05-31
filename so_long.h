@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:46:10 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/05/30 17:03:09 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/05/31 18:21:38 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,22 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
+#include <fcntl.h>
 # include <mlx.h>
 
+typedef struct data
+{
+	int i;
+	int j;
+	int fd;
+	int count;
+	char	**m;
+	char	*tmp;
+}t_data;
+
 int	check_map_file(char *str);
+int	count_m(int fd);
+char **fill_m(char **av,t_data v);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 #endif
