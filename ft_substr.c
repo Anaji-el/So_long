@@ -6,13 +6,15 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 17:23:37 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/05/31 17:54:44 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/05/31 18:35:35 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "get_next_line/get_next_line.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+
+char	*ft_substr(char  *s,  int start, size_t len)
 {
 	char			*substr;
 	size_t			i;
@@ -34,12 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-int ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}

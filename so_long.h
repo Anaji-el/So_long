@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:46:10 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/05/31 18:21:38 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/05/31 18:39:48 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ typedef struct data
 int	check_map_file(char *str);
 int	count_m(int fd);
 char **fill_m(char **av,t_data v);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char *s, int start, size_t len);
 
 #endif

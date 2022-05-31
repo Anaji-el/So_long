@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:25:41 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/05/31 18:23:38 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/05/31 18:40:56 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,14 @@ char **fill_m(char **av, t_data v)
 		printf("%s",v.m[v.i]);
 	}
 	v.m[v.i] = NULL;
-	
-	while (v.i < v.count)
+	v.i = -1;
+	while (++v.i < v.count)
 	{
+		v.tmp = v.m[v.i];
 		v.m[v.i] = ft_substr(v.tmp, 0, ft_strlen(v.tmp) - 1);
-		free(v.tmp)
+		free(v.tmp);
+		printf("%s",v.m[v.i]);
 	}
-	v.i++;
 	v.m[v.i] = NULL;
 	if(!v.m)
 		return (NULL);
