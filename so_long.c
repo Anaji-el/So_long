@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:47:23 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/05/31 16:51:06 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/05 20:56:25 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 int main(int argc, char  **argv)
 {
-	t_data v;
 	if (argc != 2)
 	{
 		printf("ERROR");
+		return (0);
 	}
+	t_data v;
 	v.fd = open(argv[1], O_RDONLY);
-	if (v.fd < 0)
-		printf("ERROR");
 	if (check_map_file(argv[1]) == -1)
 		printf("ERROR");
-	fill_m(argv,v);
-	
+	if (v.fd < 0)
+		printf("ERROR");
+	v.m = fill_m(argv,v);
+	if (check_rect(v.m) == 0 || check_f(v.m) == 0 || check_l(v.m) == 0 \
+		|| check_ll(v.m) == 0 || check_rr(v.m) == 0 || component(v.m) == 0)
+		printf("Error");
 	return (0);
 }
