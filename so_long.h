@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:46:10 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/05 20:42:31 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/05 23:48:18 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ typedef struct data
 	int	c;
 	int	e;
 	int	p;
+	void	*mlx_ptr;
+	void	*mlx_win;
+	
 }t_data;
 
 int	check_map_file(char *str);
@@ -45,5 +48,6 @@ int	check_fl(char **m);
 int check_rr(char **m);
 int check_ll(char **m);
 int	component(char	**m);
+void mlx(t_data *v);
 
 #endif
