@@ -12,19 +12,20 @@
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
-#include <fcntl.h>
+# include <fcntl.h>
 # include <mlx.h>
 
 typedef struct data
 {
 	int i;
 	int j;
-	int fd;
-	int count;
+	int		fd;
+	int		count;
 	char	**m;
 	char	*tmp;
 	int		wi;

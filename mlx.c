@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "so_long.h"
+<<<<<<< HEAD
 #include "get_next_line/get_next_line.h"
 int	count_mp(char **map)
 {
@@ -29,3 +30,16 @@ void mlx(t_data *v)
 	v->mlx_win = mlx_new_window(v->mlx_ptr,500, 200, "window");
 	mlx_loop(v->mlx_ptr);
 }	
+=======
+#include <mlx.h>
+
+void    mlx(t_data *data)
+{
+
+	void	*mlx;
+	void	*win;
+	mlx = mlx_init();
+	win = mlx_new_window(mlx, 1000, 400, "Window - Create Image");
+	mlx_loop(mlx);
+}
+>>>>>>> 79c1706237ac8eba1fe7df5ee86f787afb3c7ed0
