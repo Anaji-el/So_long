@@ -11,4 +11,14 @@
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <mlx.h>
 
+void    mlx(t_data *data)
+{
+
+	void	*mlx;
+	void	*win;
+	mlx = mlx_init();
+	win = mlx_new_window(mlx, 1000, 400, "Window - Create Image");
+	mlx_loop(mlx);
+}
