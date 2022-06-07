@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:46:10 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/05 23:48:18 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:22:15 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ typedef struct data
 	int	p;
 	void	*mlx_ptr;
 	void	*mlx_win;
-	
+	int	img_width;
+	int	img_height;
 }t_data;
 
 int	check_map_file(char *str);
