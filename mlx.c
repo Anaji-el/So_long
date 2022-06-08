@@ -6,42 +6,68 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 23:22:39 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/07 20:21:22 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/08 02:19:06 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 #include "get_next_line/get_next_line.h"
-int	count_mp(char **map)
+int	count_mp(char **m)
 {
 	int i;
 	i = 0;
-	while(map[i])
+	while(m[i])
 		i++;
 	return(i);
 }
-void mlx(t_data *v)
+void	mlx_print(t_data *v)
 {
-	v->mlx_ptr = mlx_init();
-	v->wi = ft_strlen(v->m[0]);
-	v->hei = count_mp(v->m);
-	v->img = mlx_init();
-	printf("%d",v->hei);
-	v->img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
-	v->mlx_win = mlx_new_window(v->mlx_ptr,500, 200, "window");
-	mlx_loop(v->mlx_ptr);
-}	
+	v->i = 0;
+	while (v->m[v->i])
+	{
+		v->j = 0;
+		while (v->m[v->i][v->j])
+		{
+			if (v->m[v->i][v->j] == '1')
+				mlx_put_image_to_window(v->mlx, v->mlx_win, \
+					v->wall, v->j * v->wi, v->i * v-> hei);
+			else if (v->m[v->i][v->j] == '0')
+				mlx_put_image_to_window(v->mlx, v->mlx_win, \
+					v->back, v->j * v->wi, v->i * v->hei);
+			else if (v->m[v->i][v->j] == 'C')
+				mlx_put_image_to_window(v->mlx, v->mlx_win, \
+					v->collect, v->j * v->wi, v->i * v->hei);
+			else if (v->m[v->i][v->j] == 'P')
+				mlx_put_image_to_window(v->mlx, v->mlx_win, \
+					v->player, v->j * v->wi, v->i * v->hei);
+			else if (v->m[v->i][v->j] == 'E')
+				mlx_put_image_to_window(v->mlx, v->mlx_win, \
+					v->close, v->j * v->wi, v->i * v->hei);
+		v->j++;
+		}
+	v->i++;
+	}
+}
 
-// #include <mlx.h>
+void	mlx(char	**m)
+{
+	t_data	v;
 
-// void    mlx(t_data *data)
-// {
-
-// 	void	*mlx;
-// 	void	*win;
-// 	mlx = mlx_init();
-// 	win = mlx_new_window(mlx, 1000, 400, "Window - Create Image");
-// 	mlx_loop(mlx);
-// }
+	v.len = (int)ft_strlen(m[0]);
+	v.mlx = mlx_init();
+	v.mlx_win = mlx_new_window(v.mlx, v.len * 60, count_mp(m) * 60, "so_long");
+	v.wall = mlx_xpm_file_to_image(v.mlx, "xmp/wall.xpm", &v.wi, &v.hei);
+	v.back = mlx_xpm_file_to_image(v.mlx, "xmp/back.xpm", &v.wi, &v.hei);
+	v.player = mlx_xpm_file_to_image(v.mlx, "xmp/player.xpm", &v.wi, &v.hei);
+	v.collect = mlx_xpm_file_to_image(v.mlx, "xmp/collect.xpm", &v.wi, &v.hei);
+	v.close = mlx_xpm_file_to_image(v.mlx, "xmp/door_closed.xpm", &v.wi, &v.hei);
+	v.m = m;
+	v.count = 0;
+	// v.num = 0;
+	// mlx_hook(v.mlx_win, 2, 0, player_move, &v);
+	// mlx_hook(v.mlx_win, 17, 0, ft_exit, &v);
+	mlx_print(&v);
+	mlx_loop(v.mlx);
+}
 

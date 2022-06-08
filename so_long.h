@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:46:10 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/07 20:22:15 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/08 00:34:34 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@
 # include <fcntl.h>
 # include <mlx.h>
 
+# define WALL '1'
+# define EMPTY '0'
+# define COL 'C'
+# define EXIT 'E'
+# define PLAYER 'P'
+# define ENEMY 'X'
+# define SQUARE 32
+
 typedef struct data
 {
 	int i;
@@ -30,13 +38,20 @@ typedef struct data
 	char	*tmp;
 	int		wi;
 	int		hei;
+	int len;
 	int	c;
 	int	e;
 	int	p;
-	void	*mlx_ptr;
+	void	*mlx;
 	void	*mlx_win;
 	int	img_width;
 	int	img_height;
+	void	*wall;
+	void	*open;
+	void	*close;
+	void	*back;
+	void	*player;
+	void	*collect;
 }t_data;
 
 int	check_map_file(char *str);
@@ -50,6 +65,6 @@ int	check_fl(char **m);
 int check_rr(char **m);
 int check_ll(char **m);
 int	component(char	**m);
-void mlx(t_data *v);
+void mlx(char **m);
 
 #endif
