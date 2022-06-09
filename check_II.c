@@ -37,6 +37,9 @@ int check_rr(char **m)
 	return (1);
 }
 
+
+
+
 int	component(char	**m)
 {
 	int	i;
