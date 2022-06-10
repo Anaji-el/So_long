@@ -6,19 +6,19 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:18:33 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/05 20:55:15 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/11 00:11:25 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int check_rr(char **m)
+int	check_rr(char **m)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
-	while(m[i])
+	while (m[i])
 	{
 		j = 0;
 		while (m[i][j])
@@ -32,13 +32,9 @@ int check_rr(char **m)
 			j++;
 		}
 		i++;
-	
 	}
 	return (1);
 }
-
-
-
 
 int	component(char	**m)
 {
@@ -47,7 +43,7 @@ int	component(char	**m)
 	int	c;
 	int	e;
 	int	p;
-	
+
 	i = 0;
 	c = 0;
 	e = 0;

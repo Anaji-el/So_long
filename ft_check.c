@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 16:57:54 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/05 19:27:53 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/10 04:00:09 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	check_rect(char **m)
 {
 	t_data	data;
 
-	data.wi = ft_strlen(m[0]);
+	data.width = ft_strlen(m[0]);
 	data.i = 0;
 	while (m[data.i])
 	{
-		if (data.wi != ft_strlen(m[data.i]))
+		if (data.width != ft_strlen(m[data.i]))
 			return (0);
 		data.i++;
 	}
