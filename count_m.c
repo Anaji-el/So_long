@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:55:56 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/05/31 17:12:19 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/12 23:15:11 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@
 int	count_m(int fd)
 {
 	int		len;
-	char *str;
+	char	*str;
 
 	len = 0;
 	while (1)
 	{
 		str = get_next_line(fd);
-		
-		if(!str)
-			break;
+		if (!str)
+			break ;
 		len++;
 	}
 	close(fd);
-	return(len);
+	return (len);
 }

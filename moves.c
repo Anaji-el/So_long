@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 04:38:25 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/10 04:01:48 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/13 00:11:58 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	return_i(t_data *v)
 	v->i = 0;
 	while (v->m[v->i])
 	{
-		v->j  = 0;
+		v->j = 0;
 		while (v->m[v->i][v->j])
 		{
 			if (v->m[v->i][v->j] == 'P')
@@ -34,7 +34,7 @@ int	return_j(t_data *v)
 	v->i = 0;
 	while (v->m[v->i])
 	{
-		v->j  = 0;
+		v->j = 0;
 		while (v->m[v->i][v->j])
 		{
 			if (v->m[v->i][v->j] == 'P')
@@ -52,7 +52,7 @@ int	count_c(t_data *v)
 	v->coll = 0;
 	while (v->m[v->i])
 	{
-		v->j  = 0;
+		v->j = 0;
 		while (v->m[v->i][v->j])
 		{
 			if (v->m[v->i][v->j] == 'C')
@@ -66,7 +66,7 @@ int	count_c(t_data *v)
 
 int	player_move(int key, void *param)
 {
-	t_data *v;
+	t_data	*v;
 
 	v = (t_data *)param;
 	v->i = return_i(v);

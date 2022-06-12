@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 04:48:12 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/10 04:12:21 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/12 23:20:17 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_free(t_data	*v)
 
 	mlx_destroy_image(v->mlx, v->collect);
 	mlx_destroy_image(v->mlx, v->back);
-	// mlx_destroy_image(v->mlx, v->open);
+	mlx_destroy_image(v->mlx, v->open);
 	mlx_destroy_image(v->mlx, v->close);
 	mlx_destroy_image(v->mlx, v->player);
 	mlx_destroy_image(v->mlx, v->wall);
@@ -49,5 +49,5 @@ void	ft_free(t_data	*v)
 		free(v->m[i]);
 		i++;
 	}
-	free(v->m);
+	free (v->m);
 }

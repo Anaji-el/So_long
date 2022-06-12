@@ -1,19 +1,7 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/07 19:52:27 by anaji-el          #+#    #+#              #
-#    Updated: 2022/06/10 04:03:08 by anaji-el         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
+NAME = so_long
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
-NAME = so_long
 
 FILES = ft_check.c fill_m.c check_II.c count_m.c \
 	get_next_line/get_next_line.c get_next_line/get_next_line_utils.c check_map_file.c mlx.c \

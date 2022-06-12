@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 02:36:16 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/10 04:42:38 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/13 00:14:07 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,5 @@ void	move_down(t_data *v)
 	if (count_c(v) == 0)
 		v->close = mlx_xpm_file_to_image(v->mlx, \
 			"xmp/door_open.xpm", &v->width, &v->height);
-    mlx_print(v);
+	mlx_print(v);
 }
