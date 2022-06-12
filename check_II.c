@@ -6,7 +6,7 @@
 /*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 22:18:33 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/11 00:11:25 by anaji-el         ###   ########.fr       */
+/*   Updated: 2022/06/12 22:46:48 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,32 +38,28 @@ int	check_rr(char **m)
 
 int	component(char	**m)
 {
-	int	i;
-	int	j;
-	int	c;
-	int	e;
-	int	p;
+	t_data	v;
 
-	i = 0;
-	c = 0;
-	e = 0;
-	p = 0;
-	while (m[i])
+	v.i = 0;
+	v.c = 0;
+	v.e = 0;
+	v.p = 0;
+	while (m[v.i])
 	{
-		j = 0;
-		while (m[i][j])
+		v.j = 0;
+		while (m[v.i][v.j])
 		{
-			if (m[i][j] == 'C')
-				c++;
-			if (m[i][j] == 'P')
-				p++;
-			if (m[i][j] == 'E')
-				e++;
-			j++;
+			if (m[v.i][v.j] == 'C')
+				v.c++;
+			if (m[v.i][v.j] == 'P')
+				v.p++;
+			if (m[v.i][v.j] == 'E')
+				v.e++;
+			v.j++;
 		}
-		i++;
+		v.i++;
 	}
-	if (c > 0 && e > 0 && p == 1)
+	if (v.c > 0 && v.e > 0 && v.p == 1)
 		return (1);
 	return (0);
 }
