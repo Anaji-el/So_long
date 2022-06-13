@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_m.c                                          :+:      :+:    :+:   */
+/*   ft_unsdeci.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anaji-el <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 16:55:56 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/12 23:15:11 by anaji-el         ###   ########.fr       */
+/*   Created: 2021/12/13 23:17:42 by anaji-el          #+#    #+#             */
+/*   Updated: 2021/12/18 04:15:30 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-int	count_m(int fd)
+void	ft_unsdeci(unsigned int n, int *count)
 {
-	int		len;
-	char	*str;
-
-	len = 0;
-	while (1)
+	if (n <= 9)
 	{
-		str = get_next_line(fd);
-		if (!str)
-			break ;
-		len++;
+		ft_putchar(n + 48, count);
 	}
-	close(fd);
-	return (len);
+	else
+	{
+		ft_unsdeci(n / 10, count);
+		ft_unsdeci(n % 10, count);
+	}
 }

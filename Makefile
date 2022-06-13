@@ -1,28 +1,32 @@
 NAME = so_long
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -Imlx
 RM = rm -rf
 
+PRINTF = ft_printf/libftprintf.a
+
 FILES = ft_check.c fill_m.c check_II.c count_m.c \
-	get_next_line/get_next_line.c get_next_line/get_next_line_utils.c check_map_file.c mlx.c \
+	get_next_line/get_next_line.c get_next_line/get_next_line_utils.c check_map_file.c mlx.c so_long.c\
 	free.c moves.c player_moves.c
-PS = so_long.c
+
 OBJ = $(FILES:.c=.o)
 
-.PHONY: all fclean clean re
 all: ${NAME}
 
+${NAME}: ${OBJ} ${PRINTF} so_long.h
+	${CC} ${FLAGS} ${OBJ} ${PRINTF} -lmlx -framework OpenGL -framework AppKit -o ${NAME}
 
-${NAME}: ${OBJ}
-	${CC} ${FLAGS} ${OBJ} ${PS} -lmlx -framework OpenGL -framework AppKit -o ${NAME} 
+${PRINTF} :
+	@make -C ft_printf
 
-%.o: %.c so_long.h
+%.o: %.c
 	${CC} ${FLAGS} -c $< -o $@
 
 clean:
 	${RM} ${OBJ}
-	
+	@make -C ft_printf clean 
+
 fclean: clean
 	${RM} ${NAME}
-	${RM} ${BONUS}
+	@make -C ft_printf fclean 
 re: fclean all

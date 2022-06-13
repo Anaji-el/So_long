@@ -17,27 +17,15 @@ int	main(int argc, char **argv)
 	t_data	v;
 
 	if (argc != 2)
-	{
-		printf ("ERROR");
-		return (0);
-	}
+		return (put_error(), 0);
 	v.fd = open(argv[1], O_RDONLY);
 	if (check_map_file(argv[1]) == -1)
-	{
-		printf ("Error");
-		exit (1);
-	}
+		return (put_error(), 1);
 	if (v.fd < 0)
-	{
-		printf ("Error");
-		exit (1);
-	}
+		return (put_error(), 1);
 	v.m = fill_m(argv, v);
-	if (check_rect(v.m) == 0 || check_f(v.m) == 0 || check_l(v.m) == 0 \
-		|| check_ll(v.m) == 0 || check_rr(v.m) == 0 || component(v.m) == 0)
-	{
-		printf ("Error");
-		exit (1);
-	}
-	mlx(v.m);	
+	if (!check_rect(v.m) || !check_f(v.m) || !check_l(v.m) \
+		|| !check_ll(v.m) || !check_rr(v.m) || !component(v.m))
+		return (put_error(), 1);
+	mlx(v.m);
 }

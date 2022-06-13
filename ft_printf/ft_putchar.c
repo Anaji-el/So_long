@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_m.c                                          :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anaji-el <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 16:55:56 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/12 23:15:11 by anaji-el         ###   ########.fr       */
+/*   Created: 2021/12/10 19:19:36 by anaji-el          #+#    #+#             */
+/*   Updated: 2021/12/18 04:01:25 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-int	count_m(int fd)
+void	ft_putchar(char n, int *count)
 {
-	int		len;
-	char	*str;
-
-	len = 0;
-	while (1)
-	{
-		str = get_next_line(fd);
-		if (!str)
-			break ;
-		len++;
-	}
-	close(fd);
-	return (len);
+	write(1, &n, 1);
+	(*count)++;
 }

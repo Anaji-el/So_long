@@ -19,7 +19,7 @@ void	move_right(t_data *v)
 		v->m[v->i][v->j] = '0';
 		v->m[v->i][v->j + 1] = 'P';
 		v->num++;
-		printf("%d\n", v->num);
+		ft_printf("%d\n", v->num);
 	}
 	else if (v->m[v->i][v->j + 1] == 'E' && count_c(v) == 0)
 		you_win(v);
@@ -36,7 +36,7 @@ void	move_left(t_data *v)
 		v->m[v->i][v->j] = '0';
 		v->m[v->i][v->j - 1] = 'P';
 		v->num++;
-		printf("%d\n", v->num);
+		ft_printf("%d\n", v->num);
 	}
 	else if (v->m[v->i][v->j - 1] == 'E' && count_c(v) == 0)
 		you_win(v);
@@ -53,7 +53,7 @@ void	move_up(t_data *v)
 		v->m[v->i][v->j] = '0';
 		v->m[v->i - 1][v->j] = 'P';
 		v->num++;
-		printf("%d\n", v->num);
+		ft_printf("%d\n", v->num);
 	}
 	else if (v->m[v->i - 1][v->j] == 'E' && count_c(v) == 0)
 		you_win(v);
@@ -70,7 +70,7 @@ void	move_down(t_data *v)
 		v->m[v->i][v->j] = '0';
 		v->m[v->i + 1][v->j] = 'P';
 		v->num++;
-		printf("%d\n", v->num);
+		ft_printf("%d\n", v->num);
 	}
 	else if (v->m[v->i + 1][v->j] == 'E' && count_c(v) == 0)
 		you_win(v);

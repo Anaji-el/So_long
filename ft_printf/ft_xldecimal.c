@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_m.c                                          :+:      :+:    :+:   */
+/*   ft_XLdecimal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaji-el <anaji-el@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anaji-el <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 16:55:56 by anaji-el          #+#    #+#             */
-/*   Updated: 2022/06/12 23:15:11 by anaji-el         ###   ########.fr       */
+/*   Created: 2021/12/15 04:13:29 by anaji-el          #+#    #+#             */
+/*   Updated: 2021/12/18 03:57:45 by anaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-int	count_m(int fd)
+void	ft_xldecimal(unsigned int n, int *count)
 {
-	int		len;
-	char	*str;
+	char	*c;
 
-	len = 0;
-	while (1)
+	c = ("0123456789ABCDEF");
+	if (n < 16)
 	{
-		str = get_next_line(fd);
-		if (!str)
-			break ;
-		len++;
+		ft_putchar(c[n], count);
 	}
-	close(fd);
-	return (len);
+	else
+	{
+		ft_xldecimal(n / 16, count);
+		ft_xldecimal(n % 16, count);
+	}
 }

@@ -21,8 +21,8 @@ int	ft_exit(t_data	*v)
 
 int	you_win(t_data	*v)
 {
-	write(1, "you win!\n", 10);
 	ft_free(v);
+	write(1, "you win!\n", 10);
 	exit(0);
 }
 
@@ -39,7 +39,6 @@ void	ft_free(t_data	*v)
 
 	mlx_destroy_image(v->mlx, v->collect);
 	mlx_destroy_image(v->mlx, v->back);
-	mlx_destroy_image(v->mlx, v->open);
 	mlx_destroy_image(v->mlx, v->close);
 	mlx_destroy_image(v->mlx, v->player);
 	mlx_destroy_image(v->mlx, v->wall);

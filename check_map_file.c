@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "so_long.h"
 
 int	check_map_file(char *str)
 {
@@ -26,4 +25,7 @@ int	check_map_file(char *str)
 	return (0);
 }
 
-char 
+void	put_error(void)
+{
+	write(1, "ERROR\n", 6);
+}

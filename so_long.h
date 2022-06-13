@@ -19,6 +19,8 @@
 # include <stdbool.h>
 # include <fcntl.h>
 # include <mlx.h>
+# include "get_next_line/get_next_line.h"
+# include "ft_printf/ft_printf.h"
 
 # define A 0
 # define S 1
@@ -87,4 +89,5 @@ void	move_up(t_data *v);
 void	move_down(t_data *v);
 void	mlx_print(t_data *v);
 int		player_move(int key, void *param);
+void	put_error(void);
 #endif
