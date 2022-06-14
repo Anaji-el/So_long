@@ -12,23 +12,9 @@
 
 #include "so_long.h"
 
-int	ft_exit(t_data	*v)
+int	ft_exit(t_data *v, char *msg)
 {
-	write(1, "you quit!\n", 11);
-	ft_free(v);
-	exit(0);
-}
-
-int	you_win(t_data	*v)
-{
-	ft_free(v);
-	write(1, "you win!\n", 10);
-	exit(0);
-}
-
-int	you_left(t_data	*v)
-{
-	write(1, "you left!\n", 11);
+	write(1, msg, ft_strlen(msg));
 	ft_free(v);
 	exit(0);
 }
@@ -37,11 +23,16 @@ void	ft_free(t_data	*v)
 {
 	int	i;
 
-	mlx_destroy_image(v->mlx, v->collect);
-	mlx_destroy_image(v->mlx, v->back);
-	mlx_destroy_image(v->mlx, v->close);
-	mlx_destroy_image(v->mlx, v->player);
-	mlx_destroy_image(v->mlx, v->wall);
+	if (v->collect)
+		mlx_destroy_image(v->mlx, v->collect);
+	if (v->back)
+		mlx_destroy_image(v->mlx, v->back);
+	if (v->close)
+		mlx_destroy_image(v->mlx, v->close);
+	if (v->player)
+		mlx_destroy_image(v->mlx, v->player);
+	if (v->wall)
+		mlx_destroy_image(v->mlx, v->wall);
 	i = 0;
 	while (v->m[i])
 	{

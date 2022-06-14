@@ -66,6 +66,11 @@ void	mlx(char	**m)
 		&v.width, &v.height);
 	v.close = mlx_xpm_file_to_image(v.mlx, "xmp/door_closed.xpm", \
 		&v.width, &v.height);
+	if (!v.wall || !v.back || !v.player || !v.collect || !v.close)
+	{
+		ft_printf("Error: XPM file not found\n");
+		exit(1);
+	}
 	v.m = m;
 	v.count = 0;
 	v.num = 0;

@@ -22,7 +22,7 @@ void	move_right(t_data *v)
 		ft_printf("%d\n", v->num);
 	}
 	else if (v->m[v->i][v->j + 1] == 'E' && count_c(v) == 0)
-		you_win(v);
+		ft_exit(v, "You win\n");
 	if (count_c(v) == 0)
 		v->close = mlx_xpm_file_to_image(v->mlx, \
 			"xmp/door_open.xpm", &v->width, &v->height);
@@ -39,7 +39,7 @@ void	move_left(t_data *v)
 		ft_printf("%d\n", v->num);
 	}
 	else if (v->m[v->i][v->j - 1] == 'E' && count_c(v) == 0)
-		you_win(v);
+		ft_exit(v, "You win\n");
 	if (count_c(v) == 0)
 		v->close = mlx_xpm_file_to_image(v->mlx, \
 			"xmp/door_open.xpm", &v->width, &v->height);
@@ -56,7 +56,7 @@ void	move_up(t_data *v)
 		ft_printf("%d\n", v->num);
 	}
 	else if (v->m[v->i - 1][v->j] == 'E' && count_c(v) == 0)
-		you_win(v);
+		ft_exit(v, "You win\n");
 	if (count_c(v) == 0)
 		v->close = mlx_xpm_file_to_image(v->mlx, \
 			"xmp/door_open.xpm", &v->width, &v->height);
@@ -73,7 +73,7 @@ void	move_down(t_data *v)
 		ft_printf("%d\n", v->num);
 	}
 	else if (v->m[v->i + 1][v->j] == 'E' && count_c(v) == 0)
-		you_win(v);
+		ft_exit(v, "You win\n");
 	if (count_c(v) == 0)
 		v->close = mlx_xpm_file_to_image(v->mlx, \
 			"xmp/door_open.xpm", &v->width, &v->height);

@@ -6,7 +6,7 @@ RM = rm -rf
 PRINTF = ft_printf/libftprintf.a
 
 FILES = ft_check.c fill_m.c check_II.c count_m.c \
-	get_next_line/get_next_line.c get_next_line/get_next_line_utils.c check_map_file.c mlx.c so_long.c\
+	get_next_line_cp/get_next_line.c get_next_line_cp/get_next_line_utils.c check_map_file.c mlx.c so_long.c\
 	free.c moves.c player_moves.c
 
 OBJ = $(FILES:.c=.o)

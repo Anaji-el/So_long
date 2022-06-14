@@ -19,7 +19,7 @@
 # include <stdbool.h>
 # include <fcntl.h>
 # include <mlx.h>
-# include "get_next_line/get_next_line.h"
+# include "get_next_line_cp/get_next_line.h"
 # include "ft_printf/ft_printf.h"
 
 # define A 0
@@ -79,9 +79,7 @@ void	mlx(char **m);
 int		return_i(t_data *v);
 int		return_j(t_data *v);
 int		count_c(t_data *v);
-int		you_win(t_data	*v);
-int		ft_exit(t_data	*v);
-int		you_left(t_data	*v);
+int		ft_exit(t_data	*v, char *msg);
 void	ft_free(t_data	*v);
 void	move_right(t_data *v);
 void	move_left(t_data *v);

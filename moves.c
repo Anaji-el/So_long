@@ -80,6 +80,6 @@ int	player_move(int key, void *param)
 	else if (key == D)
 		move_right(v);
 	else if (key == ESC)
-		you_left(v);
+		ft_exit(v, "You left\n");
 	return (0);
 }
